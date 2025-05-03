@@ -1,22 +1,22 @@
-﻿# CustomKnowledgeBase-Chatbot
+
 # Custom Knowledge Base Chatbot Using LangChain
 
-## 📚 Project Overview
+## Project Overview
 
 This project presents a **Custom Knowledge Base Chatbot** designed to provide intelligent responses to user queries based on domain-specific documents. Built using **LangChain**, **Pinecone**, and **LLMs** like **Mistral 7B**, this solution ingests organizational documents (e.g., HR policies, job postings, internal directories) and enables semantic search and contextual responses through a user-friendly interface.
 
-## 🚀 Features
+ Features
 
-- 📄 PDF Document Ingestion and Preprocessing
-- 🧠 Embedding Generation using Hugging Face Transformers
-- 🔍 Semantic Search via Pinecone Vector Database
-- 🗣️ Retrieval-based Question Answering with LangChain
-- 💬 Interactive Chat Interface (Streamlit / HTML + JS + Flask)
-- 🔧 Modular, Scalable Architecture for Future Enhancements
+- 1. PDF Document Ingestion and Preprocessing
+- 2.Embedding Generation using Hugging Face Transformers
+- 3.Semantic Search via Pinecone Vector Database
+- 4.Retrieval-based Question Answering with LangChain
+  -5. Interactive Chat Interface (Streamlit / HTML + JS + Flask)
+- 6. Modular, Scalable Architecture for Future Enhancements
 
 ---
 
-## 🛠️ Tech Stack
+## Requirements
 
 | Component                | Technology Used                       |
 |--------------------------|----------------------------------------|
@@ -31,7 +31,7 @@ This project presents a **Custom Knowledge Base Chatbot** designed to provide in
 
 ---
 
-## 🧩 Project Modules
+## Project Modules
 
 1. **Document Ingestion**
    - Load PDF files using `PyPDFDirectoryLoader`.
