@@ -11,7 +11,7 @@ This project presents a **Custom Knowledge Base Chatbot** designed to provide in
 - 2.Embedding Generation using Hugging Face Transformers
 - 3.Semantic Search via Pinecone Vector Database
 - 4.Retrieval-based Question Answering with LangChain
-  -5. Interactive Chat Interface (Streamlit / HTML + JS + Flask)
+  -5. Interactive Chat Interface 
 - 6. Modular, Scalable Architecture for Future Enhancements
 
 ---
