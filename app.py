@@ -9,14 +9,14 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain_huggingface import HuggingFaceEndpoint
 
-# --- OS Fix for Windows + Python 3.8+ ---
+
 if sys.platform.startswith("win") and sys.version_info >= (3, 8):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
-# --- PAGE SETTINGS ---
+
 st.set_page_config(page_title="Workcohol AI Buddy", layout="centered")
 
-# --- INIT QA CHAIN ---
+
 @st.cache_resource
 def load_qa_chain():
     pc = Pinecone(api_key="pcsk_5GaY1y_8sAoHhVACpt45xUSYZFaifSzCeAoMr8HZbuexftJXE6X4bKxP24NLHTW7MAnZTi")
@@ -38,7 +38,7 @@ def load_qa_chain():
 
 qa_chain = load_qa_chain()
 
-# --- SESSION STATE INIT ---
+
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
@@ -51,7 +51,7 @@ if "feedback_submitted" not in st.session_state:
 if "injected_input" not in st.session_state:
     st.session_state.injected_input = None
 
-# --- SIDEBAR ---
+
 with st.sidebar:
     st.title("🤖 Workcohol AI Buddy")
     st.markdown("Ask me anything about Workcohol's company policies, services, careers, and more.")
@@ -81,7 +81,7 @@ with st.sidebar:
         st.session_state.injected_input = None
         st.rerun()
 
-    # --- FEEDBACK SECTION IN SIDEBAR EXPANDER ---
+    
     st.markdown("---")
     with st.expander("📝 Give Feedback"):
         if not st.session_state.feedback_submitted:
@@ -91,29 +91,26 @@ with st.sidebar:
                 comments = st.text_area("Any suggestions or comments?")
                 submitted = st.form_submit_button("Submit")
                 if submitted:
-                    # Store feedback if needed
                     st.success("🎉 Thank you for your feedback!")
                     st.session_state.feedback_submitted = True
         else:
             st.success("✅ Feedback submitted. Thank you!")
-
-# --- GREETING ON FIRST LOAD ---
+            
 if not st.session_state.greeted:
     greeting = "👋 Hey! I'm Workcohol AI Buddy. How can I help you today?."
     st.session_state.chat_history.append({"role": "assistant", "content": greeting})
     st.session_state.greeted = True
 
-# --- MAIN TITLE ---
+
 st.title("💬 Chat with Workcohol AI Buddy")
 
-# --- DISPLAY CHAT MESSAGES ---
 for i, chat in enumerate(st.session_state.chat_history):
     message(chat["content"], is_user=(chat["role"] == "user"), key=str(i))
 
-# --- HANDLE CHAT INPUT ---
+
 user_input = st.chat_input("Ask your question here...")
 
-# Handle input from history click
+
 if st.session_state.injected_input and not user_input:
     user_input = st.session_state.injected_input
     st.session_state.injected_input = None
