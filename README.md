@@ -26,7 +26,7 @@ This project presents a **Custom Knowledge Base Chatbot** designed to provide in
 | Vector Store             | Pinecone                              |
 | Framework                | LangChain                             |
 | Document Loader          | PyPDFDirectoryLoader, PDFLoader       |
-| Frontend (Option A)      | Streamlit                             |  |                                |
+| Frontend                 | Streamlit                             |  |                                |
 | OS Platform              | Windows                               |
 
 ---
